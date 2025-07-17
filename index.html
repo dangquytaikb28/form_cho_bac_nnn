@@ -1,0 +1,303 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Siêu Âm - Doppler Tim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="hospital-info">
+            <div>
+                BỆNH VIỆN TWQĐ 108<br>
+                108 CENTRAL MILITARY HOSPITAL<br>
+                <b>KHOA NỘI TIM MẠCH</b><br>
+                <b>DEPARTMENT OF CARDIOLOGY</b>
+            </div>
+            <div style="text-align: right;">
+                Số hồ sơ: <input type="text" class="hospital-info-input" id="hospitalRecordNumber"><br>
+                Số phiếu: <input type="text" class="hospital-info-input" id="hospitalFormNumber">
+            </div>
+        </div>
+    </div>
+
+    <div class="title">
+        <h1>SIÊU ÂM - DOPPLER TIM</h1>
+        <h2>ECHOCARDIOGRAPHY</h2>
+    </div>
+
+    <div class="patient-info">
+        <table>
+            <tr>
+                <td style="width: 50%;">Họ và tên/name: <input type="text" class="name-input" id="patientName"></td>
+                <td style="width: 25%;">Tuổi/Age: <input type="text" class="age-input" id="patientAge"></td>
+                <td style="width: 25%;">Giới tính/gender: <input type="text" class="gender-input" id="patientGender"></td>
+            </tr>
+            <tr>
+                <td style="width: 50%;">Cao/height: <input type="text" class="height-input" id="patientHeight"> cm</td>
+                <td style="width: 25%;">Cân nặng/weight: <input type="text" class="weight-input" id="patientWeight"> kg</td>
+                <td style="width: 25%;">BSA: <input type="text" class="bsa-input" id="patientBSA"> m2</td>
+            </tr>
+             <tr>
+                <td colspan="3">Địa chỉ/address: <input type="text" class="address-input" id="patientAddress"></td>
+            </tr>
+             <tr>
+                <td>Số thẻ BHYT: <input type="text" class="insurance-input" id="patientInsurance"></td>
+                <td colspan="2">Ngày thực hiện: <input type="text" class="date-input" id="examinationDate"></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Chẩn đoán lâm sàng/Diagnosis: <span contenteditable="true" id="clinicalDiagnosis" class="editable-content inline"></span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    Yêu cầu chẩn đoán: <span contenteditable="true" id="diagnosisRequest" class="editable-content inline"></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h3 style="text-align:center; font-weight: bold; margin-top: 20px;">KẾT QUẢ</h3>
+
+    <div class="results">
+        <table>
+            <tr>
+                <th>Nhĩ trái<br>/left atrium</th>
+                <th>ĐM chủ<br>/Aorta</th>
+                <th colspan="6">Thất trái/Left ventricle</th>
+                <th colspan="2">Bề dày VLT<br>/Septal thickness</th>
+                <th colspan="2">Bề dày TSTT<br>/Posterior wall</th>
+                <th colspan="2">Nhĩ(lọc)<br>/Atrium</th>
+            </tr>
+            <tr>
+                <th>mm</th>
+                <th>mm</th>
+                <th>Dd<br>mm</th>
+                <th>Ds<br>mm</th>
+                <th>Vd ml</th>
+                <th>Vs ml</th>
+                <th>FS<br>%</th>
+                <th>EF<br>(Teich)<br>%</th>
+                <th>t.trg<br>mm</th>
+                <th>t.thu<br>mm</th>
+                <th>t.trg<br>mm</th>
+                <th>t.thu<br>mm</th>
+                <th>Trái<br>mm</th>
+                <th>Phải<br>mm</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="laMeasurement"></td>
+                <td><input type="text" id="aortaMeasurement"></td>
+                <td><input type="text" id="lvDd"></td>
+                <td><input type="text" id="lvDs"></td>
+                <td><input type="text" id="lvVd"></td>
+                <td><input type="text" id="lvVs"></td>
+                <td><input type="text" id="lvFS"></td>
+                <td><input type="text" id="lvEF"></td>
+                <td><input type="text" id="septalThickDiastole"></td>
+                <td><input type="text" id="septalThickSystole"></td>
+                <td><input type="text" id="pwThickDiastole"></td>
+                <td><input type="text" id="pwThickSystole"></td>
+                <td><input type="text" id="atriumLeft"></td>
+                <td><input type="text" id="atriumRight"></td>
+            </tr>
+        </table>
+
+        <table>
+             <tr>
+                <th colspan="6">Chức năng tâm trương thất trái<br>/Diastolic function</th>
+                <th colspan="6">Chức năng tâm thu thất phải<br>/Right ventricle function</th>
+            </tr>
+            <tr>
+                <th>E<br>(ms)</th>
+                <th>A<br>(ms)</th>
+                <th>DT<br>(ms)</th>
+                <th>E/A</th>
+                <th>E/e'</th>
+                <th>LAVI<br>biplane</th>
+                <th>TAPSE<br>(mm)</th>
+                <th>D1<br>(mm)</th>
+                <th>D2<br>(mm)</th>
+                <th>D3<br>(mm)</th>
+                <th>S'<br>(cm/s)</th>
+                <th>FAC<br>(%)</th>
+            </tr>
+             <tr>
+                <td><input type="text" id="diastolicE"></td>
+                <td><input type="text" id="diastolicA"></td>
+                <td><input type="text" id="diastolicDT"></td>
+                <td><input type="text" id="diastolicEA"></td>
+                <td><input type="text" id="diastolicEe"></td>
+                <td><input type="text" id="laviBiplane"></td>
+                <td><input type="text" id="tapse"></td>
+                <td><input type="text" id="rvD1"></td>
+                <td><input type="text" id="rvD2"></td>
+                <td><input type="text" id="rvD3"></td>
+                <td><input type="text" id="rvSprime"></td>
+                <td><input type="text" id="rvFAC"></td>
+            </tr>
+        </table>
+
+        <div class="additional-results">
+            <div class="flex-row">
+                <div class="flex-col-2">
+                    <strong>Chức năng thất trái theo Simpson Left<br>ventricular function by Simpson:text</strong>
+                </div>
+                <div class="flex-col-1 text-center">
+                    Vd: <input type="text" class="small-input" id="simpsonVd">
+                </div>
+                <div class="flex-col-1 text-center">
+                    Vs: <input type="text" class="small-input" id="simpsonVs">
+                </div>
+                <div class="flex-col-1 text-center">
+                    EF: <input type="text" class="small-input" id="simpsonEF">
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <div class="flex-col-2">
+                    Đường kính TMC dưới/ text: <input type="text" class="small-input" id="ivcDiameter">
+                </div>
+                <div class="flex-col-1">
+                    thì hít vào/<br>inspiration: <input type="text" class="small-input-narrow" id="ivcInspiration">
+                </div>
+                <div class="flex-col-1">
+                    thì thở ra/<br>expiration: <input type="text" class="small-input-narrow" id="ivcExpiration">
+                </div>
+                <div class="flex-col-1">
+                    LVM: <input type="text" class="small-input" id="lvm">
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <div class="flex-col-2">
+                    Inferior vena cava diameter: <input type="text" class="small-input-narrow" id="ivcDiameterText">
+                </div>
+                <div class="flex-col-2">
+                    Sức căng toàn bộ thất trái/:<br>
+                    Global longitudinal strain (GLS)(%): <input type="text" class="small-input-narrow" id="gls">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="section no-border no-padding">
+    <hr class="section-divider">
+    <div class="flex-container">
+        <div class="col-left">
+            <strong>2D/3D</strong><br><br>
+            <strong>1 - Van hai lá/mitral valve:</strong><br>
+            Dạng di động: <input type="text" class="medium-input" id="mvMovement"><br>
+            K.cách hai bờ van: <input type="text" class="medium-input" id="mvDistance"><br>
+            T.trạng van, dây chằng: <input type="text" class="medium-input" id="mvCondition"><br>
+            Mép van: <input type="text" class="medium-input" id="mvCommissure"><br>
+            Huyết khối nhĩ trái/tiểu nhĩ trái: <input type="text" class="medium-input" id="laThrombus"><br>
+        </div>
+
+        <div class="col-right">
+            <strong>Doppler:</strong><br><br>
+            <strong></strong><br>
+            MaxPG: <input type="text" class="small-input" id="mvMaxPG"> MeanPG: <input type="text" class="small-input" id="mvMeanPG"><br>
+            Hở van hai lá: <input type="text" class="medium-input-narrow" id="mrSeverity"><br>
+            SHoHL: <input type="text" class="medium-input-narrow" id="mrShuHL"><br>
+            D.tích lỗ van: <input type="text" class="medium-input-narrow" id="mvOrificeArea"><br>
+            Vena contracta (MR): <input type="text" class="medium-input-narrow" id="mrVenaContracta"><br>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="flex-container">
+        <div class="col-left">
+            <strong>2 - Van động mạch chủ/aortic valve:</strong><br>
+            Tình trạng van: <input type="text" class="medium-input" id="avCondition"><br>
+            Biên độ mở van: <input type="text" class="small-input" id="avOpeningAmplitude"> mm<br>
+            ĐK HoC: <input type="text" class="medium-input-narrow" id="avHoCDiameter"> ĐRTT: <input type="text" class="medium-input-narrow" id="avRTDiameter"><br>
+            ĐMC lên: <input type="text" class="medium-input-narrow" id="aortaAscending"> STJ: <input type="text" class="medium-input-narrow" id="aortaSTJ"><br>
+            Quai: <input type="text" class="medium-input-narrow" id="aortaArch"> ĐMC xuống: <input type="text" class="medium-input-narrow" id="aortaDescending"><br>
+        </div>
+
+        <div class="col-right">
+            <strong></strong><br>
+            Vmax: <input type="text" class="small-input" id="avVmax"> m/s<br>
+            MaxPG: <input type="text" class="small-input" id="avMaxPG"> mmHg MeanPG: <input type="text" class="small-input" id="avMeanPG"><br>
+            Hở van ĐMC: <input type="text" class="medium-input-narrow" id="arSeverity"> [PHT: <input type="text" class="medium-input-narrow" id="arPHT">]<br>
+            Vena contracta (AR): <input type="text" class="medium-input-narrow" id="arVenaContracta"><br>
+            Diện tích lỗ van: <input type="text" class="medium-input-narrow" id="avOrificeArea"><br>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="flex-container">
+        <div class="col-left">
+            <strong>3 - Van động mạch phổi/pulmonic valve:</strong><br>
+            T.trạng van: <input type="text" class="medium-input" id="pvCondition"><br>
+            ĐK gốc ĐMP: <input type="text" class="medium-input-narrow" id="paRootDiameter"><br>
+            ĐK nhánh phải: <input type="text" class="medium-input-narrow" id="paRightBranchDiameter"> ĐK thân ĐMP: <input type="text" class="medium-input-narrow" id="paTrunkDiameter"><br>
+             ĐK nhánh trái: <input type="text" class="medium-input-narrow" id="paLeftBranchDiameter"><br>
+        </div>
+
+        <div class="col-right">
+            Vmax: <input type="text" class="small-input" id="pvVmax"> m/s<br>
+            MaxPG: <input type="text" class="small-input" id="pvMaxPG"> mmHg MeanPG: <input type="text" class="small-input" id="pvMeanPG"><br>
+            Hở van ĐMP: <input type="text" class="medium-input-narrow" id="prSeverity"><br>
+            Áp lực ĐMP (ước tính):<br>
+            cuối t.trương: <input type="text" class="medium-input-narrow" id="papDiastolic"> tr.bình: <input type="text" class="medium-input-narrow" id="papMean"><br>
+        </div>
+    </div>
+</div>
+
+<div class="section no-border no-padding">
+    <hr class="section-divider">
+
+    <div class="flex-container">
+        <div class="col-left">
+            <strong>4 - Van ba lá/tricuspid:</strong><br>
+            T.trạng van: <input type="text" class="medium-input" id="tvCondition"><br>
+        </div>
+        <div class="col-right">
+            Hở van ba lá: <input type="text" class="medium-input-narrow" id="trSeverity"> ShoBL: <input type="text" class="medium-input-narrow" id="trShuBL"><br>
+            MaxPG: <input type="text" class="small-input" id="trMaxPG"> MeanPG: <input type="text" class="small-input" id="trMeanPG"><br>
+            Áp lực DMP tâm thu: <input type="text" class="small-input-long" id="pasP"> mmHg<br>
+        </div>
+    </div>
+    <br>
+    <hr class="section-divider">
+    <strong>5. Vận động thành thất/ventricular wall motion:</strong>
+    <div contenteditable="true" id="ventricularWallMotion" class="editable-content"></div>
+    <strong>6. Màng ngoài tim/pericardium:</strong>
+    <div contenteditable="true" id="pericardium" class="editable-content"></div>
+    <strong>7. Nhận xét khác/other comments:</strong>
+    <div contenteditable="true" id="otherComments" class="editable-content"></div>
+</div>
+
+
+<div class="conclusion-section">
+    <label>8. KẾT LUẬN:</label>
+    <div contenteditable="true" id="conclusion" class="editable-content conclusion-box"></div>
+</div>
+
+    <div class="signature-section">
+        <div class="signature-block">
+            <i><div contenteditable="true" id="signatureDate" class="editable-content signature-date">07:28, Ngày 00 tháng 00 năm 2025</div></i><br>
+            <i>Date of performing</i><br>
+            <b>Bác sĩ làm siêu âm</b><br>
+            <b>Echocardiographer</b>
+            <div class="doctor-name">
+                <div contenteditable="true" id="doctorName" class="editable-content doctor-name-input">TS. Nguyễn Thị Kiều Ly</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<button class="print-button no-print" onclick="window.print()">🖨️ In Phiếu</button>
+
+<script src="script.js"></script>
+</body>
+</html>
